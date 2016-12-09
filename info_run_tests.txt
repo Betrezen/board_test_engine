@@ -1,0 +1,16 @@
+Preparations:
+    # sudo apt-get update
+    # sudo apt-get install cmake
+    # sudo apt-get install build-essential
+    # sudo apt-get install python-dev
+    # sudo apt-get install qt4-qmake libqt4-dev
+    # sudo pip install -U pip virtualenv
+    # virtualenv --clear .venv && source .venv/bin/activate
+    # pip install -U -r requirements.txt
+
+Just run with output to console:
+    # py.test ./test_engine/ -v -s -ra --pdb
+Run with report generation:
+    # py.test ./test_engine/ --junit-xml .reports/junit_report.xml -v
+Run from python code:
+    # python test_engine/base.py

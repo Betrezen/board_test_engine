@@ -1,0 +1,28 @@
+# PyTest
+pytest
+pytest-ordering
+
+# Debug
+ipdb
+IPython
+
+# Other
+click
+pyyaml
+sqlalchemy
+pyzmq
+waiting
+
+# HEAVY
+PySide
+
+# Web
+flask
+flask-sqlalchemy
+flask-admin
+flask-restful
+flask-login
+
+# code check
+pep8
+pylint

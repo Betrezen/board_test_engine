@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}TestResults{% endblock %}
+{% block content %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+{% for category, message in get_flashed_messages(with_categories=true) %}
+<div class="alert alert-{{ category }}">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    {{ message }}
+</div>
+{% endfor %}
+  <h1 class="page-header">Results:</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Barcode</th>
+          <th>DateTime</th>
+          <th>Status</th>
+          <th>Results</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for it in data['results'] %}
+        <tr>
+          <td>{{ it.id }}</td>
+          <td>{{ it.barcode }}</td>
+          <td>{{ it.date_time }}</td>
+          <td>
+            {% if it.status == 'PASS' %}<font color="#00ff00">{{ it.status}}</font>{% endif %}
+            {% if it.status != 'PASS' %}<font color="#ff0000">{{ it.status}}</font>{% endif %}
+          </td>
+          <td>{{ it.result }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
